@@ -42,7 +42,7 @@ switch (argv[1]) {
   case "-":
     obj = new Subtract(+argv[0], +argv[2]);
     break;
-  case "*":
+  case "x":
     obj = new Multiply(+argv[0], +argv[2]);
     break;
   case "/":
