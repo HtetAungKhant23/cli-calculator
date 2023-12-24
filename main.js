@@ -52,6 +52,4 @@ switch (argv[1]) {
     obj = new Add(+argv[0], +argv[2]);
 }
 
-console.log(
-  `${firstNumber} ${operator} ${secondNumber} = ${obj.calculation()}`
-);
+console.log(`${argv[0]} ${argv[1]} ${argv[2]} = ${obj.calculation()}`);

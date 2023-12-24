@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 script_name=$0
 first_number=$1
 operator=$2
