@@ -1,15 +1,11 @@
 const args = process.argv;
 const argv = args.slice(2);
-const firstNumber = +argv[0];
-const operator = argv[1];
-const secondNumber = +argv[2];
 
 class Calculator {
   constructor(firstNumber, secondNumber) {
     this.firstNumber = firstNumber;
     this.secondNumber = secondNumber;
   }
-
   calculation() {}
 }
 
@@ -37,6 +33,25 @@ class Divide extends Calculator {
   }
 }
 
-const add = new Add(firstNumber, secondNumber);
-const res = add.calculation();
-console.log(`${firstNumber} ${operator} ${secondNumber} = ${res}`);
+let obj;
+
+switch (argv[1]) {
+  case "+":
+    obj = new Add(+argv[0], +argv[2]);
+    break;
+  case "-":
+    obj = new Subtract(+argv[0], +argv[2]);
+    break;
+  case "*":
+    obj = new Multiply(+argv[0], +argv[2]);
+    break;
+  case "/":
+    obj = new Divide(+argv[0], +argv[2]);
+    break;
+  default:
+    obj = new Add(+argv[0], +argv[2]);
+}
+
+console.log(
+  `${firstNumber} ${operator} ${secondNumber} = ${obj.calculation()}`
+);
